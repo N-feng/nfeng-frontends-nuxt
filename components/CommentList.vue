@@ -2,11 +2,11 @@
   <v-card flat tile class="pa-3">
     <v-form @submit.prevent="send">
       <v-text-field
+        v-model="content"
         label="说点啥吧"
         required
         append-icon="mdi-send"
         @click:append="send"
-        v-model="content"
       ></v-text-field>
     </v-form>
     <v-list two-line>
@@ -46,6 +46,12 @@ export default {
       comments: [],
     }
   },
+  watch: {
+    object: {
+      handler: 'fetch',
+      immediate: true,
+    },
+  },
   methods: {
     async send() {
       await this.$axios.$post('comments', {
@@ -67,12 +73,6 @@ export default {
           },
         },
       })
-    },
-  },
-  watch: {
-    object: {
-      handler: 'fetch',
-      immediate: true,
     },
   },
 }

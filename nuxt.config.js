@@ -16,8 +16,8 @@ export default {
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       {
         rel: 'stylesheet',
-        href: 'https://fonts.googleapis.com/css?family=Material+Icons'
-      }
+        href: 'https://fonts.googleapis.com/css?family=Material+Icons',
+      },
     ],
   },
 
@@ -42,12 +42,25 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    '@nuxtjs/auth',
     // https://go.nuxtjs.dev/pwa
     // '@nuxtjs/pwa',
     // Doc: https://github.com/nuxt-community/dotenv-module
-    '@nuxtjs/dotenv'
+    '@nuxtjs/dotenv',
   ],
-
+  auth: {
+    strategies: {
+      local: {
+        endpoints: {
+          login: { url: '/auth/login' },
+          logout: { url: '/auth/logout' },
+          user: { url: '/auth/user', propertyName: false },
+        },
+        // tokenRequired: true,
+        // tokenType: 'bearer'
+      },
+    },
+  },
   // Axios module configuration (https://go.nuxtjs.dev/config-axios)
   axios: {},
 

@@ -28,7 +28,7 @@
           </v-list-item>
         </v-list>
 
-        <!-- <v-list-item v-if="$store.state.auth.user" class="mt-4">
+        <v-list-item v-if="$store.state.auth.user" class="mt-4">
           <v-list-item-action>
             <v-icon color="grey darken-1">mdi-lock</v-icon>
           </v-list-item-action>
@@ -43,10 +43,10 @@
           <v-list-item-title class="grey--text text--darken-1"
             >登录</v-list-item-title
           >
-        </v-list-item> -->
+        </v-list-item>
         <v-list-item link>
           <v-list-item-action>
-            <v-icon color="grey darken-1">mdi-settings</v-icon>
+            <v-icon color="grey darken-1">settings</v-icon>
           </v-list-item-action>
           <v-list-item-title class="grey--text text--darken-1"
             >Manage Subscriptions</v-list-item-title
@@ -57,7 +57,7 @@
 
     <v-app-bar app clipped-left dense flat>
       <v-app-bar-nav-icon @click.stop="drawer = !drawer" />
-      <!-- <v-icon class="mx-4 blue--text">landscape</v-icon> -->
+      <v-icon class="mx-4 blue--text">landscape</v-icon>
       <v-toolbar-title class="mr-12 align-center">
         <span class="subtitle-1 font-weight-bold">N-feng</span>
       </v-toolbar-title>

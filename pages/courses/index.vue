@@ -16,7 +16,7 @@
           </v-card-subtitle>
 
           <v-card-actions>
-            <!-- <like-btn :object="item._id" type="Course"></like-btn> -->
+            <like-btn :object="item._id" type="Course"></like-btn>
 
             <v-btn color="purple" text> Explore </v-btn>
 
@@ -29,9 +29,9 @@
 </template>
 
 <script>
-// import LikeBtn from '../../components/LikeBtn.vue'
+import LikeBtn from '../../components/LikeBtn.vue'
 export default {
-  //   components: { LikeBtn },
+  components: { LikeBtn },
   async asyncData({ $axios }) {
     const data = await $axios.$get('courses')
     return {

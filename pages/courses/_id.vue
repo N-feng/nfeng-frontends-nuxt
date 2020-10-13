@@ -3,7 +3,7 @@
     <v-row>
       <v-col :md="8">
         <video :src="episode.file" width="100%" controls></video>
-        <!-- <like-btn :object="course._id" type="Course"></like-btn> -->
+        <like-btn :object="course._id" type="Course"></like-btn>
         <h3>{{ course.name }}</h3>
         <v-select
           v-model="currentIndex"
@@ -11,19 +11,19 @@
         ></v-select>
       </v-col>
       <v-col :md="4">
-        <!-- <comment-list type="Episode" :object="episode._id"></comment-list> -->
+        <comment-list type="Episode" :object="episode._id"></comment-list>
       </v-col>
     </v-row>
   </div>
 </template>
 
 <script>
-// import LikeBtn from '../../components/LikeBtn.vue'
-// import CommentList from '../../components/CommentList.vue'
+import LikeBtn from '../../components/LikeBtn.vue'
+import CommentList from '../../components/CommentList.vue'
 export default {
   components: {
-    // LikeBtn,
-    // CommentList
+    LikeBtn,
+    CommentList,
   },
   async asyncData({ params, $axios }) {
     const { id } = params

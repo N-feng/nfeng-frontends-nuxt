@@ -1,5 +1,5 @@
 <template>
-  <v-btn :color="status ? 'pink' : null" @click="toggle" icon>
+  <v-btn :color="status ? 'pink' : null" icon @click="toggle">
     <v-icon>mdi-heart</v-icon>
   </v-btn>
 </template>
